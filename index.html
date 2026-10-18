@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080e1b">
+  <title>Shadow Strike | Survival Shooter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="game-container">
+    <header class="top-bar">
+      <div>
+        <h1>SHADOW STRIKE</h1>
+        <p class="subtitle">SURVIVE. FIGHT. CONQUER.</p>
+      </div>
+      <button id="restartBtn" class="small-btn">↻ Restart</button>
+    </header>
+
+    <section class="hud">
+      <div>SCORE <span id="score">0</span></div>
+      <div>HEALTH <span id="health">100</span></div>
+      <div>COINS <span id="coins">0</span> 🪙</div>
+      <div>ENEMIES <span id="enemyCount">0</span></div>
+      <div id="bossHUD" class="boss-hud hidden">
+  <div class="boss-title">☠ BOSS</div>
+  <div class="boss-health-track">
+    <div id="bossHealthFill" class="boss-health-fill"></div>
+  </div>
+</div>
+    </section>
+
+    <div class="canvas-wrap">
+      <canvas id="gameCanvas" width="900" height="560"></canvas>
+
+      <section id="mainMenu" class="overlay">
+        <div class="menu-content">
+          <div class="game-logo">✦</div>
+          <p class="eyebrow">ARCADE SURVIVAL SHOOTER</p>
+          <h2>SHADOW <span>STRIKE</span></h2>
+          <p class="menu-description">
+            Enter the arena. Fight enemies. Collect rewards!
+          </p>
+          <button id="playBtn" class="primary-btn">▶ PLAY GAME</button>
+          <button id="howToBtn" class="secondary-btn">HOW TO PLAY</button>
+          <p class="menu-footer">YOUR MISSION STARTS HERE</p>
+        </div>
+      </section>
+
+      <section id="howToPanel" class="overlay hidden">
+        <div class="menu-content instruction-card">
+          <h2>HOW TO PLAY</h2>
+          <p>⌨️ <b>Move:</b> WASD or Arrow Keys</p>
+          <p>🖱️ <b>Aim:</b> Move your mouse</p>
+          <p>🔫 <b>Shoot:</b> Hold mouse button or Space</p>
+          <p>📱 <b>Mobile:</b> Direction pad + FIRE</p>
+          <p>🪙 <b>Coins:</b> Defeat enemies and collect coins.</p>
+          <p>💚 <b>Health:</b> Collect green health pickups.</p>
+          <p>⚡ <b>Upgrade:</b> Spend coins to shoot faster.</p>
+          <button id="backBtn" class="primary-btn">← BACK TO MENU</button>
+        </div>
+      </section>
+
+      <section id="pauseMenu" class="overlay hidden">
+        <div class="menu-content">
+          <h2>GAME PAUSED</h2>
+          <p>Take a breath, soldier.</p>
+          <button id="resumeBtn" class="primary-btn">▶ RESUME</button>
+          <button id="menuBtn" class="secondary-btn">MAIN MENU</button>
+        </div>
+      </section>
+
+      <section id="gameOver" class="overlay hidden">
+        <div class="menu-content">
+          <h2 class="danger-title">GAME OVER</h2>
+          <p>Your final score</p>
+          <div id="finalScore" class="final-score">0</div>
+          <p>Total coins: <span id="finalCoins">0</span> 🪙</p>
+          <button id="playAgainBtn" class="primary-btn">↻ PLAY AGAIN</button>
+          <button id="gameOverMenuBtn" class="secondary-btn">MAIN MENU</button>
+        </div>
+      </section>
+    </div>
+
+    <section class="upgrade-panel">
+      <div class="upgrade-info">
+        <span class="upgrade-icon">⚡</span>
+        <div>
+          <strong>WEAPON UPGRADE</strong>
+          <p id="weaponLevel">Weapon Level: 1</p>
+        </div>
+      </div>
+      <button id="upgradeBtn" class="upgrade-btn">
+        UPGRADE · 10 🪙
+      </button>
+    </section>
+
+    <div class="game-actions">
+      <p class="instructions">
+        Move: WASD / Arrows · Aim: Mouse · Shoot: Click / Space
+      </p>
+      <button id="pauseBtn" class="pause-btn" disabled>Ⅱ PAUSE</button>
+    </div>
+
+    <section class="mobile-controls">
+      <div class="direction-pad">
+        <button data-key="ArrowUp" class="control up" aria-label="Move up">▲</button>
+        <div class="direction-row">
+          <button data-key="ArrowLeft" class="control" aria-label="Move left">◀</button>
+          <button data-key="ArrowDown" class="control" aria-label="Move down">▼</button>
+          <button data-key="ArrowRight" class="control" aria-label="Move right">▶</button>
+        </div>
+      </div>
+      <button id="fireBtn" class="fire-btn">FIRE ●</button>
+    </section>
+
+    <footer>SHADOW STRIKE · SURVIVE AS LONG AS YOU CAN</footer>
+  </main>
+</body>
+</html>
