@@ -526,3 +526,19 @@ footer {
 .hidden {
   display: none !important;
 }
+/* Mobile game controls layout fix */
+@media (max-width: 768px) {
+  #fireBtn {
+    position: fixed !important;
+    right: 18px !important;
+    bottom: 115px !important;
+    width: 115px !important;
+    height: 115px !important;
+    z-index: 9999 !important;
+  }
+
+  [data-key] {
+    position: relative;
+    z-index: 9999;
+  }
+}
